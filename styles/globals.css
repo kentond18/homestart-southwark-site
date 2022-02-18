@@ -1,15 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-	.card {
-		@apply p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600;
-	}
-	.card h2 {
-		@apply text-2xl font-bold;
-	}
-	.card p {
-		@apply mt-4 text-xl;
-	}
+}
+
+h1 {
+	@apply text-4xl font-bold md:text-6xl;
+}
+
+h2 {
+	@apply text-3xl font-bold md:text-5xl;
+}
+
+h3 {
+	@apply text-2xl font-bold md:text-4xl;
+}
+
+h4 {
+	@apply text-xl font-bold md:text-3xl;
+}
+
+h5 {
+	@apply text-lg font-bold md:text-2xl;
+}
+
+h6 {
+	@apply text-base font-bold md:text-xl;
+}
+
+p {
+	@apply text-base font-normal text-gray-300 md:text-lg;
+}
+
+.menu-title {
+	@apply text-base font-bold text-orange-300 md:text-lg;
+}
+
+.menu-sublink {
+	@apply text-base font-normal text-purple-600 hover:underline md:text-lg;
+}
+
+.menu-submenu {
+	@apply absolute;
 }

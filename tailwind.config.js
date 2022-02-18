@@ -70,6 +70,11 @@ module.exports = {
 				900: "#00181a",
 			},
 			gray: colors.slate,
+			white: colors.white,
+			black: colors.black,
+		},
+		fontFamily: {
+			sans: ["Source Sans Pro", "calibri", "sans-serif"],
 		},
 		extend: {},
 	},
