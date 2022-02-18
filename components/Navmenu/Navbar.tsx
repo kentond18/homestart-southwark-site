@@ -37,7 +37,7 @@ const Navbar: React.FC<Props> = () => {
 			<ul
 				className={`${
 					isOpen ? "left-0 bg-white" : " -left-full bg-transparent"
-				} absolute z-10 flex h-auto w-3/5 transform flex-col overflow-auto border px-3 shadow transition-all duration-500 ease-in-out`}
+				} absolute z-10 flex h-auto w-3/5 transform flex-col overflow-auto border px-3 pb-2 shadow transition-all duration-500 ease-in-out`}
 			>
 				{NavData.map((menu) => {
 					return <Menu key={menu.name} menu={menu} />;
