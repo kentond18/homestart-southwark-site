@@ -5,6 +5,8 @@ import { NextPage } from "next";
 import HeadBar from "../components/HeadBar";
 
 const Home: NextPage = () => {
+	const [isOpen, setIsOpen] = useState(false);
+
 	return (
 		<div className="min-h-vh flex-col">
 			<Header
@@ -16,19 +18,21 @@ const Home: NextPage = () => {
 				phone={"020 7737 7720"}
 				email={"info@homestartsouthwark.co.uk"}
 			/>
-			<Navbar />
+			<Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
 
 			<div
-				className="container h-1/2"
-				style={{
-					backgroundImage: "url('/child-on-playground.jpg')",
-					backgroundSize: "cover",
-				}}
+				className={`${
+					isOpen ? "opacity-30" : "opacity-100"
+				} transition-all duration-300 ease-in-out`}
 			>
-				<div className="flex h-full flex-col items-center justify-center space-y-3 p-4">
-					<h1 className="text-center font-bold text-white">
-						Homestart Southwark
-					</h1>
+				<div
+					className="container flex h-1/2 flex-col items-center justify-center space-y-3 p-4 bg-blend-normal backdrop-brightness-50"
+					style={{
+						background:
+							"linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('/child-on-playground.jpg')",
+						backgroundSize: "cover",
+					}}
+				>
 					<div>
 						<p className="pb-0">
 							Lorem ipsum dolor sit amet consectetur adipisicing
@@ -38,11 +42,11 @@ const Home: NextPage = () => {
 						</p>
 						<p className="float-right px-3 text-left">- Author</p>
 					</div>
-					<button>Learn More</button>
+					<button className="btn">Learn More</button>
 				</div>
-			</div>
 
-			<Footer />
+				<Footer />
+			</div>
 		</div>
 	);
 };
@@ -55,6 +59,7 @@ export default Home;
 //- The data can be publicly cached (not user-specific).
 //- The page must be pre-rendered (for SEO) and be very fast — getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance.
 import { GetStaticProps } from "next";
+import { useState } from "react";
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
 	// your fetch function here

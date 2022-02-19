@@ -1,17 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { NavData } from "../../data/nav";
 import Menu from "./Menu";
+import logo from "../../public/logo.png";
 
-type Props = {};
+type Props = {
+	isOpen: boolean;
+	setIsOpen: (isOpen: boolean) => void;
+};
 
-const Navbar: React.FC<Props> = () => {
-	const [isOpen, setIsOpen] = useState(false);
-
+const Navbar: React.FC<Props> = ({ isOpen, setIsOpen }) => {
 	return (
-		<nav className="static bg-white shadow-md">
-			<div className="flex items-center justify-center">
-				<button className="m-2" onClick={() => setIsOpen(!isOpen)}>
+		<nav className="static bg-white py-2 shadow-md">
+			<div className="relative flex items-center justify-center">
+				<button
+					className="absolute left-0 z-10 ml-2"
+					onClick={() => setIsOpen(!isOpen)}
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						className="h-8 w-8"
@@ -28,8 +34,15 @@ const Navbar: React.FC<Props> = () => {
 					</svg>
 				</button>
 				<Link href="/">
-					<a className="grow text-center">
-						<h1>Homestart Southwark</h1>
+					<a className="">
+						<Image
+							src={logo}
+							alt="logo"
+							placeholder="blur"
+							layout="intrinsic"
+							objectFit="contain"
+							height={80}
+						/>
 					</a>
 				</Link>
 			</div>
