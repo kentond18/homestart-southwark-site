@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu } from "../../types";
 import NavSubmenu from "./NavSubmenu";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
 	menu: Menu;
@@ -26,18 +28,7 @@ const Menu = ({ menu }: Props) => {
 					onClick={() => setIsOpen(!isOpen)}
 				>
 					<a className="menu-title">{menu.name} </a>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						className="h-5 w-5"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-					>
-						<path
-							fillRule="evenodd"
-							d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-							clipRule="evenodd"
-						/>
-					</svg>
+					<FontAwesomeIcon icon={faChevronDown} />
 				</button>
 				<NavSubmenu links={menu.items} isOpen={isOpen} />
 			</li>
@@ -53,18 +44,7 @@ const Menu = ({ menu }: Props) => {
 						className="flex items-center justify-end text-orange-300"
 						onClick={() => setIsOpen(!isOpen)}
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="h-5 w-5"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-						>
-							<path
-								fillRule="evenodd"
-								d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-								clipRule="evenodd"
-							/>
-						</svg>
+						<FontAwesomeIcon icon={faChevronDown} />
 					</button>
 				</div>
 				<NavSubmenu links={menu.items} isOpen={isOpen} />

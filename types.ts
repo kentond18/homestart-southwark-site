@@ -8,3 +8,12 @@ export interface Menu {
 	path?: string;
 	items?: MenuItem[];
 }
+
+export interface ContactInfo {
+	email: string;
+	phone: string;
+	address: string;
+	facebook: string;
+	twitter: string;
+	instagram: string;
+}
