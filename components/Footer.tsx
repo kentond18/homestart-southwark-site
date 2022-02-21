@@ -110,9 +110,13 @@ const Footer: FC<Props> = () => {
 					)}
 				</div>
 			</div>
-			<div className="flex justify-evenly text-gray-300 hover:text-white hover:underline">
-				<h6>Terms of Use</h6>
-				<h6>Privacy Policy</h6>
+			<div className="flex justify-evenly text-gray-300 ">
+				<h6 className="hover:text-white hover:underline">
+					Terms of Use
+				</h6>
+				<h6 className="hover:text-white hover:underline">
+					Privacy Policy
+				</h6>
 			</div>
 			<div className="flex justify-center">
 				<p>&#169; {new Date().getFullYear()} Homestart Southwark</p>

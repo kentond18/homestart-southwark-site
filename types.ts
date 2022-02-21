@@ -17,3 +17,10 @@ export interface ContactInfo {
 	twitter: string;
 	instagram: string;
 }
+
+export interface InfoCard {
+	title: string;
+	description: string;
+	image: StaticImageData | string;
+	alt: string;
+}
