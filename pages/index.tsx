@@ -3,6 +3,8 @@ import Navbar from "../components/Navmenu/Navbar";
 import Footer from "../components/Footer";
 import { NextPage } from "next";
 import HeadBar from "../components/HeadBar";
+import InfoCard from "../components/InfoCard";
+import { aboutInfo } from "../data/aboutinfo";
 
 const Home: NextPage = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +45,12 @@ const Home: NextPage = () => {
 						<p className="float-right px-3 text-left">- Author</p>
 					</div>
 					<button className="btn">Learn More</button>
+				</div>
+
+				<div>
+					{aboutInfo.map((e, i) => {
+						return <InfoCard key={i} info={e} />;
+					})}
 				</div>
 
 				<Footer />
